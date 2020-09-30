@@ -1,0 +1,28 @@
+.uploaded-file {
+  width: 80%;
+  height: 300px;
+  border: 0.5rem dashed gray;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fa-plus {
+  font-size: 8rem;
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  transform: scale(1.1);
+  transition: 0.15s ease-in-out;
+}
+
+.correct {
+  font-size: 8rem;
+}
+
+.upload-btn {
+  transform: scale(1.5);
+}

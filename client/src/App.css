@@ -1,0 +1,104 @@
+/* Navbar */
+
+.navbar {
+  background: white;
+  padding: 1rem 15rem;
+  box-shadow: 0 0 30px 1px rgba(128, 128, 128, 0.466);
+  left: 0;
+  right: 0;
+}
+
+.container-1 {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.table td,
+.table th {
+  padding: 0.5rem;
+}
+
+.table-header {
+  background: dodgerblue;
+  color: white;
+}
+
+.table {
+  /* transform: scale(0.95); */
+  margin: auto;
+  display: block;
+}
+.navb-links {
+  color: black;
+}
+
+.drop-area {
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 600 !important;
+  padding: 3rem !important;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+}
+
+.nav-logo {
+  height: 60px;
+}
+
+.fa-flag {
+  font-size: 1.75rem;
+  margin: 0.25rem 1rem;
+}
+
+.fa-check {
+  font-size: 1.5rem;
+}
+.fa-times {
+  font-size: 1.5rem;
+}
+
+/* content  */
+.trans-types {
+  margin: 2rem 0;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: 700;
+}
+
+form {
+  margin: 0.5rem;
+}
+
+.modal-dialog {
+  max-width: 50%;
+}
+
+/* Graphhh */
+
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Transactions Page */
+
+.spinner-grow {
+  transform: scale(3);
+  margin: 3rem;
+}
+
+.loading-msg {
+  margin: 10rem;
+}
