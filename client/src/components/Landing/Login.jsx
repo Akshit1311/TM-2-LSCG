@@ -5,7 +5,7 @@ function Login() {
     <div className="login-box">
       <h1>Sign In</h1>
       <br />
-      <form action="/upload">
+      <form action="/dashboard">
         <div className="form-group">
           <h5 htmlFor="usr">Name:</h5>
           <input type="text" className="form-control cus-input" id="usr" />

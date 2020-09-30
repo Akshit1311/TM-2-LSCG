@@ -2,22 +2,18 @@ import React, { useState, Fragment } from "react";
 
 import TransTable from "./Transactions/TransTable";
 // import { pendingData, acceptedData, rejectedData } from "../data/transData";
-import redData from "../data/Red_Flagged.json";
-import orangeData from "../data/Organge_Flagged.json";
-import greenData from "../data/Green_Flagged.json";
 
-function Transactions() {
+import NewFU from "./FileUpload/NewFU";
+
+function Transactions({ allFlags }) {
   const [pending, setPending] = useState("pending");
   const [accepted, setAccepted] = useState("accepted d-none");
   const [rejected, setRejected] = useState("rejected d-none");
 
   const [activeSect, setActiveSect] = useState("pending");
 
-  const [pendingRecords, setPendingRecords] = useState([
-    ...redData,
-    ...orangeData,
-  ]);
-  const [acceptedRecords, setAcceptedRecords] = useState([...greenData]);
+  const [pendingRecords, setPendingRecords] = useState([]);
+  const [acceptedRecords, setAcceptedRecords] = useState([]);
   const [rejectedRecords, setRejectedRecords] = useState([]);
 
   const handleAcception = (trans) => {
@@ -125,16 +121,18 @@ function Transactions() {
           </div>
         </div>
       ) : (
-        <div className="loading-msg">
-          <div className="spinner-grow mx-auto d-block"></div>
-          <br />
-          <h3 className="text-dark text-center ">
-            Please wait until your <br /> data is being processed ...
-          </h3>
-        </div>
+        <NewFU setPendingRecords={setPendingRecords} />
       )}
     </Fragment>
   );
 }
 
 export default Transactions;
+
+// <div className="loading-msg">
+//           <div className="spinner-grow mx-auto d-block"></div>
+//           <br />
+//           <h3 className="text-dark text-center ">
+//             Please wait until your <br /> data is being processed ...
+//           </h3>
+//         </div>

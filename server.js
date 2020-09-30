@@ -8,7 +8,7 @@ const path = require("path");
 const app = express();
 
 // Running Python
-// let { PythonShell } = require("python-shell");
+let { PythonShell } = require("python-shell");
 
 app.use(fileUpload());
 
@@ -36,23 +36,32 @@ app.post("/upload", (req, res) => {
     // const process = spawn("python", ["./python/Transaction_Monitoring.py"]);
     //  const process = spawn("python", ["./python/Transaction_Monitoring.py"])
 
-    const pythonProcess = spawn("python", ["TMmodel.py"]);
+    // should work
+    // const pythonProcess = spawn("python", ["TMmodel.py"]);
 
-    pythonProcess.stdout.on("data", (data) => {
-      // Do something with the data returned from python script
-      console.log(data.toString());
-    });
+    // pythonProcess.stdout.on("data", (data) => {
+    //   console.log(data.toString());
+    // });
 
     //Working
 
-    // PythonShell.run(
-    //   "Transaction_Monitoring.py",
-    //   { pythonOptions: ["-u"] },
-    //   function (err) {
-    //     console.log("finished");
-    //     if (err) throw err;
-    //   }
-    // );
+    let flags;
+
+    PythonShell.run("TMmodel.py", { pythonOptions: ["-u"] }, function (
+      err,
+      results
+    ) {
+      console.log("finished");
+      if (err) throw err;
+      // flags = JSON.parse(results[0]);
+      flags = JSON.parse(results[0]);
+      res.json({
+        fileName: file.name,
+        filePath: `/uploads/${file.name}`,
+        isUploaded: true,
+        allFlags: flags,
+      });
+    });
 
     // Testing
     // pyshell.end(function (err, code, signal) {
@@ -66,11 +75,12 @@ app.post("/upload", (req, res) => {
     //   console.log(data.toString());
     // });
 
-    res.json({
-      fileName: file.name,
-      filePath: `/uploads/${file.name}`,
-      isUploaded: true,
-    });
+    // res.json({
+    //   fileName: file.name,
+    //   filePath: `/uploads/${file.name}`,
+    //   isUploaded: true,
+    //   allFlags: flags,
+    // });
   });
 });
 

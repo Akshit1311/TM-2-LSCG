@@ -17,7 +17,7 @@ function NewFU(props) {
     onDropAccepted: () => {
       console.log("accepted");
       setUploadStatus("accepted");
-      setUploadClass("spinner-grow text-dark correct");
+      // setUploadClass("spinner-grow text-dark correct");
     },
     onDropRejected: () => {
       setUploadClass("fa fa-times text-danger correct");
@@ -61,6 +61,10 @@ function NewFU(props) {
           "Content-Type": "multipart/form-data",
         },
       });
+
+      // props.sendFlags([...res.data.allFlags]);
+
+      props.setPendingRecords([...res.data.allFlags]);
 
       console.log(res.data);
 
@@ -112,8 +116,11 @@ function NewFU(props) {
               type="submit"
               value="Upload"
               className="btn btn-primary mx-auto d-block upload-btn mt-4"
+              onClick={() => {
+                setUploadClass("spinner-grow text-dark correct");
+              }}
             />
-            <h2 className="text-center mt-4">Please Click on Upload</h2>
+            {/* <h2 className="text-center mt-4">Please Click on Upload</h2> */}
           </React.Fragment>
         )}
 

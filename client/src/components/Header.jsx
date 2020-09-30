@@ -25,12 +25,12 @@ function Header() {
       <Link className="navb-links" to="/dashboard">
         Dashboard
       </Link>
-      <Link className="navb-links" to="/graphs">
+      {/* <Link className="navb-links" to="/graphs">
         Graphs
-      </Link>
-      <Link className="navb-links" to="/upload">
+      </Link> */}
+      {/* <Link className="navb-links" to="/upload">
         Upload
-      </Link>
+      </Link> */}
       {/* </Router> */}
       {/* <a href="/">Graphs</a> */}
     </div>

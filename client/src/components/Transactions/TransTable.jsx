@@ -1,6 +1,6 @@
 import React from "react";
 import { logDOM } from "@testing-library/react";
-import { acceptedData } from "../../data/transData";
+// import { acceptedData } from "../../data/transData";
 
 //Data
 

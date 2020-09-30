@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Transactions from "./components/Transactions";
@@ -15,9 +15,9 @@ function App() {
       <Router forceRefresh>
         <Header />
         <Route exact path="/" component={Site} />
-        <Route exact path="/dashboard" component={Transactions} />
+        <Route exact path="/dashboard" component={() => <Transactions />} />
         <Route exact path="/graphs" component={Graphs} />
-        <Route exact path="/upload" component={NewFU} />
+        {/* <Route exact path="/upload" component={() => <NewFU />} /> */}
         {/* <Route exact path="/newfu" component={NewFU} /> */}
       </Router>
       {/* <Transactions /> */}
